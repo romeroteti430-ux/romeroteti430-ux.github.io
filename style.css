@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f5f7;
+    color: #202124;
+}
+
+.lab-banner {
+    background: #17191f;
+    color: #8df0b1;
+    text-align: center;
+    padding: 11px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.topbar {
+    height: 75px;
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+}
+
+.brand {
+    color: #5b50e8;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.secure {
+    color: #777;
+    font-size: 13px;
+}
+
+.checkout {
+    max-width: 1150px;
+    margin: 35px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 390px;
+    gap: 35px;
+}
+
+.checkout-form {
+    background: white;
+    border-radius: 16px;
+    padding: 38px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.05);
+}
+
+.steps {
+    display: flex;
+    gap: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.steps .active {
+    color: #5b50e8;
+    font-weight: bold;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.section {
+    border-top: 1px solid #eee;
+    padding: 25px 0;
+}
+
+.section h2 {
+    margin: 0 0 20px;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin: 16px 0 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d9dce2;
+    border-radius: 9px;
+    font-size: 15px;
+    background: white;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.delivery {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.delivery.selected {
+    border-color: #5b50e8;
+    background: #f8f7ff;
+}
+
+.delivery input {
+    width: auto;
+}
+
+.delivery span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.delivery small {
+    color: #777;
+}
+
+.payment-warning {
+    background: #fff3cd;
+    border: 1px solid #f1d98a;
+    color: #705600;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.fake-payment {
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 9px;
+    background: #eaf8ef;
+    color: #16834b;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    border: 0;
+    border-radius: 10px;
+    padding: 17px;
+    background: #5b50e8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #493ed0;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.status {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.summary {
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    background: #1c1e27;
+    color: white;
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 55px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #343743;
+}
+
+.product-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 9px;
+    background: #5b50e8;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-info span {
+    color: #a5a7b0;
+    font-size: 12px;
+}
+
+.line,
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.line {
+    color: #b5b7bf;
+}
+
+.total {
+    border-top: 1px solid #343743;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.simulation-card {
+    margin-top: 25px;
+    padding: 18px;
+    background: #292c39;
+    border-radius: 10px;
+    color: #8df0b1;
+}
+
+.simulation-card p {
+    color: #bbb;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.bottom-warning {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: #fff3cd;
+    color: #765b00;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+
+    .checkout {
+        grid-template-columns: 1fr;
+    }
+
+    .summary {
+        position: static;
+    }
+
+    .checkout-form {
+        padding: 25px;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+}

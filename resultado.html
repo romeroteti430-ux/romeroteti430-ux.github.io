@@ -1,0 +1,76 @@
+<script>
+const form = document.getElementById("checkoutForm");
+const status = document.getElementById("status");
+
+<script>
+document
+    .getElementById("checkoutForm")
+    .addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        window.location.href =
+            "https://voltra.com.ar/checkouts/cn/hWNHaxxHIjGpE0gTudP9ILbO/es-ar?_r=AQABW4563Sxx10vQkK28hIWf4dUmnLWZiO1IcXlgdrHT56hktGU4";
+    });
+</script>
+
+
+    event.preventDefault();
+
+    status.textContent = "Enviando simulación...";
+    status.style.color = "#667281";
+
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        address: document.getElementById("address").value,
+        postalCode: document.getElementById("postalCode").value,
+        city: document.getElementById("city").value,
+        province: document.getElementById("province").value,
+        message: document.getElementById("message").value,
+        testUserId: document.getElementById("testUserId").value,
+        testReference: document.getElementById("testReference").value
+    };
+
+    try {
+
+        const response = await fetch("/api/test", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.ok) {
+            throw new Error(
+                result.error || "No se pudo enviar la simulación"
+            );
+        }
+
+        status.textContent =
+            "✓ Simulación enviada correctamente.";
+
+        status.style.color = "#36745b";
+
+        setTimeout(() => {
+
+            window.location.href =
+                "https://voltra.com.ar/checkouts/cn/hWNHaxxHIjGpE0gTudP9ILbO/es-ar?_r=AQABW4563Sxx10vQkK28hIWf4dUmnLWZiO1IcXlgdrHT56hktGU4";
+
+        }, 500);
+
+    } catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+            "✕ " + error.message;
+
+        status.style.color = "#b43d3d";
+    }
+
+});
+</script>
